@@ -1,0 +1,33 @@
+server:
+  port: ${SERVER_PORT:4321}
+
+spring:
+  show-sql: false
+  flyway:
+    schemas: ${DB_SCHEMA}
+    locations: classpath:/db/migration
+    baseline-on-migrate: true
+    clean-disabled: true
+  jpa:
+    application:
+      name: gameshelf-api
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+
+logging:
+  file:
+    max-history: 10
+    max-size: 1240MB
+    name: ./logs/log_file.log
+  level:
+    ROOT: TRACE
+    org.hibernate.SQL: DEBUG
+    org.hibernate.search.massindexing: DEBUG
+    org.hibernate.search.query: DEBUG
+    org.hibernate.type.descriptor.sql: DEBUG
+
