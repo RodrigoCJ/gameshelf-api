@@ -25,7 +25,8 @@ logging:
     max-size: 1240MB
     name: ./logs/log_file.log
   level:
-    ROOT: TRACE
+    #    ROOT: TRACE
+    org.flywaydb: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.search.massindexing: DEBUG
     org.hibernate.search.query: DEBUG
